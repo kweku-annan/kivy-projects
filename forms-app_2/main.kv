@@ -1,0 +1,81 @@
+#: import C kivy.utils.get_color_from_hex
+
+<TEXTINPUT@TextInput>:
+    multiline: False
+    write_tab: False
+    size_hint: 1, None
+    height: 45
+    padding_y: (self.height - self.line_height)/2
+#    halign: 'center'
+#    background_color: (.06, .45, .45, .2)
+#    cursor_color: C("#fffff")
+
+
+<MainWindow>:
+    id: main_window
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    space_x: self.size[0]/7
+
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: (.06, .45, .45, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        size_hint_y: None
+        height: 80
+
+        Label:
+            text: "Akwaaba!"
+            bold: True
+            font_size: 70
+            font_name: "fonts/ComicSansMS3.ttf"
+    Label:
+        text:
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: main_window.space_x, 10
+#        size_hint_y: .50
+#        height: 100
+        spacing: 10
+        TEXTINPUT:
+            hint_text: "Name"
+        TEXTINPUT:
+            hint_text: "Contact"
+        TEXTINPUT:
+            hint_text: "Email"
+        TEXTINPUT:
+            hint_text: "Location"
+    BoxLayout:
+        size_hint_y: None
+        height: 70
+        padding: main_window.space_x, 10
+        Button:
+            text: "Submit"
+#            font_size: 20
+            background_color: (.06, .45, .45, 1)
+            background_normal: ""
+    Label:
+        text: ''
+
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: (.06, .45, .45, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        size_hint_y: None
+        height: 30
+
+        Label:
+            text: "Kweku-Annan 2022"
