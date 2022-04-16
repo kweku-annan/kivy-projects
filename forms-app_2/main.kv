@@ -48,22 +48,29 @@
 #        height: 100
         spacing: 10
         TEXTINPUT:
+            id: participant_name
             hint_text: "Name"
         TEXTINPUT:
+            id: contact
             hint_text: "Contact"
         TEXTINPUT:
+            id: email
             hint_text: "Email"
         TEXTINPUT:
+            id: location
             hint_text: "Location"
+            on_text_validate: root.save_data()
     BoxLayout:
         size_hint_y: None
         height: 70
         padding: main_window.space_x, 10
         Button:
+            id: submit
             text: "Submit"
 #            font_size: 20
             background_color: (.06, .45, .45, 1)
             background_normal: ""
+            on_release: root.save_data()
     Label:
         text: ''
 
